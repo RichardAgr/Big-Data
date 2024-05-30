@@ -26,6 +26,7 @@ Posterior a eso se tiene que ir al archivo a la ruta src/lib/bd.ts y se tiene qu
 ![password](https://github.com/RichardAgr/Big-Data/assets/136004365/1f2595bc-2ec8-49e1-b08f-d1c960e4e396).
 
 una vez ejecutado el codigo de mysql como resultado tenemos lo siguiente:
+
 ![baseDatos](https://github.com/RichardAgr/Big-Data/assets/136004365/5cf11857-4329-42d2-a6f0-3b0e12142771)![baseDatosCreado](https://github.com/RichardAgr/Big-Data/assets/136004365/03447e1e-b3d8-4807-814a-9d40d568d464)
 </p>
 
