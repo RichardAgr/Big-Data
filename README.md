@@ -4,7 +4,7 @@
 <p>
 La base de datos que se esta usando es Mysql, esta de forma local, en el cual se tiene que insertar el codigo para crear la tabla:
 </p>
-```mysql
+```html
 CREATE DATABASE BigData;
 USE BigData;
 CREATE TABLE noticias (
