@@ -44,7 +44,9 @@ Una vez finalizado el scraping ya deberiamos tener la base de datos con datos:
 ![datos](https://github.com/RichardAgr/Big-Data/assets/136004365/1394158e-3332-489b-889a-f6ef29a6d5bd)
 </p>
 
+
 ##Generar archivo txt
+
 
 <p>
 Una vez teniendo los datos en la base de datos vamos a poner una fecha inicial y una fecha final para poder descargar las noticias en un txt.
@@ -61,7 +63,10 @@ Lo que nos muestra es las noticias que hemos extraido del scraping y para poder 
 ![txt4](https://github.com/RichardAgr/Big-Data/assets/136004365/25e8f7c6-d6fe-4a78-8b91-35e218a39dde)
 </p>
 
+
 ##Hadoop configuraciones y comandos
+
+
 <p>
 Para poder usar Hadoop vamos a tener que instalar:
 </p>
@@ -108,3 +113,5 @@ para que funcione correctamente.
 </p>
 
 ##Analizar noticias
+
+
