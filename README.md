@@ -115,4 +115,52 @@ para que funcione correctamente.
 
 ##Analizar noticias
 
+<p>
+Para analizar el archivo txt en el hadoop tenemos que conectarnos con nuestra maquina virtual desde nuestra maquina, en este caso tenemos windows 10, se esta usando filezilla para poder hacer la transferencia del archivo noticias.txt, para esto a que darle el servidor y un puerto.
 
+servidor: sftp://localhost
+usuario: hadoop
+contrasenia: hadoop
+puerto: 22022
+
+![servidorfile](https://github.com/RichardAgr/Big-Data/assets/136004365/b4953613-cdc5-434b-9703-30fae8bce20e)
+
+y si todo esta correcto nos mostrar esto:
+
+![conexionCorrecta](https://github.com/RichardAgr/Big-Data/assets/136004365/6e8c2124-c399-4d6c-87a0-31b15ff25d15)
+
+una vez hecho estos pasos, vamos a arrastras el archivo txt al apartado de hadoop:
+
+![arrastre](https://github.com/RichardAgr/Big-Data/assets/136004365/94ec9632-bf65-4fe9-a5e0-046711ad2376)
+
+esperamos ya que suele tardar y notamos que se transferio correctamente el archivo y lo podemos en en hadoop:
+
+![traspaso](https://github.com/RichardAgr/Big-Data/assets/136004365/de3abd2a-f6a9-4e6f-be4d-e844890bf3be)
+
+como se puede apreciar tenemos el archivo txt.
+
+luego ejecutamos el comando:
+
+./automatization.sh
+
+y esperamos a que termine
+para poder ver que esta haciendo hadoop podemos poner el dominio:
+http://localhost:8089/	
+
+![progresoHadop](https://github.com/RichardAgr/Big-Data/assets/136004365/66a32160-2167-4a66-9694-4b693eb148b9)
+
+se ve que esta haciendo el proceso y cuando termine nos mostrara SUCCEEDED.
+Finalizado el proceso nos vamos a la carpeta hadoop y este no ha generado un archivo este tenemos que traerlo a nuestro escritorio, este es el resultado de todo el proceso hecho:
+
+![resultado](https://github.com/RichardAgr/Big-Data/assets/136004365/850c2d2c-e427-4bbc-8ece-f0907d19595a)
+
+este archivo lo cambiamos por el nombre **noticia.txt** y lo ponemos a la interfaz para ver los resultados:
+
+![filtrps](https://github.com/RichardAgr/Big-Data/assets/136004365/95fbd946-7695-4eac-8a64-2462f0e4c05b)
+
+presionamos el boton "CARGAR MAP REDUCE" y colocamos el archivo noticias.txt (El cual se cambio de nombre por ser el resultdo despues del proceso de hadoop), escogemos una fecha inicial y final y presionamos el boton "INICIAR SOLICITUD " esto para traer las noticias de la base datos, y con todo eso ya tenemos las palabras claves para ir escogiendo cuales fueron las noticas mas publicadas en ese rango de fechas. 
+
+![resultadoFinal](https://github.com/RichardAgr/Big-Data/assets/136004365/eb8478c7-7f08-4649-95a7-f2a4ec158647)
+
+se puede escoger los periodicos como las palabras claves.
+</p>
