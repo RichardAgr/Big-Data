@@ -45,3 +45,66 @@ Una vez finalizado el scraping ya deberiamos tener la base de datos con datos:
 </p>
 
 ##Generar archivo txt
+
+<p>
+Una vez teniendo los datos en la base de datos vamos a poner una fecha inicial y una fecha final para poder descargar las noticias en un txt.
+
+![fecha](https://github.com/RichardAgr/Big-Data/assets/136004365/da443c88-e586-40ad-a9e5-fec2cd9027e5)
+
+Vamos a generar la solicitud presionando el boton: "INICIAR SOLICITUD".
+Y en la interfaz nos tendria que mostrar:
+
+![generamosTxt](https://github.com/RichardAgr/Big-Data/assets/136004365/8e2909ce-c0e4-4d72-a78d-83ea64d16c72)
+
+Lo que nos muestra es las noticias que hemos extraido del scraping y para poder descargarlos en un formato txt vamos a presionar en el boton "DESCARGAR NOTICIAS" y posterior a eso guardamos el txt con el nombre **noticias** ya que en hadoop lo va a reconocer con ese nombre para su analisis.
+
+![txt4](https://github.com/RichardAgr/Big-Data/assets/136004365/25e8f7c6-d6fe-4a78-8b91-35e218a39dde)
+</p>
+
+##Hadoop configuraciones y comandos
+<p>
+Para poder usar Hadoop vamos a tener que instalar:
+</p>
+- Virtual box.
+-El ova (Carpeta ova).
+
+![virtualBox](https://github.com/RichardAgr/Big-Data/assets/136004365/50413ff5-a5bb-4c1f-94ef-7168f57bb300)
+
+<p>
+iniciamos el ova en el virtual box y cuando ya este listo la maquina virtual nos pedira un usuario y contrasenia:
+usuario: hadoop
+contrasenia: hadoop
+luego ejecutamos estos comandos para su correcto funcionamiento:
+</p>
+
+```
+[hadoop@nodo1 ~]$ start-dfs.sh
+[hadoop@nodo1 ~]$ start-yarn.sh
+[hadoop@nodo1 ~]$ ./automatizacion.sh 
+
+
+[hadoop@nodo1 ~]$ rm -rf /home/hadoop/resultado/*
+[hadoop@nodo1 ~]$ hdfs dfs -put noticias.txt /noticias
+[hadoop@nodo1 ~]$ cd /opt/hadoop/hadoop-2.7.7
+[hadoop@nodo1 hadoop-2.7.7]$ cd share/
+[hadoop@nodo1 share]$ cd hadoop/
+[hadoop@nodo1 hadoop]$ cd mapreduce/
+[hadoop@nodo1 mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.7.7.jar wordcount /noticias /resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -get /resultado/part-r-00000 /home/hadoop/resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -rm -r /resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -rm /resultado/noticias.txt
+
+
+hdfs dfs -rm -r /resultado
+hdfs dfs -rm /noticias/noticias.txt
+```
+<p>
+cabe recalcar que solo se ejecuta una vez todos estos comandos pero si luego se apaga la maquina virtual, y se la vuelve a prender solo ejecutamos:
+
+[hadoop@nodo1 ~]$ start-dfs.sh
+[hadoop@nodo1 ~]$ start-yarn.sh
+
+para que funcione correctamente.
+</p>
+
+##Analizar noticias
