@@ -107,6 +107,7 @@ hdfs dfs -rm /noticias/noticias.txt
 cabe recalcar que solo se ejecuta una vez todos estos comandos pero si luego se apaga la maquina virtual, y se la vuelve a prender solo ejecutamos:
 
 [hadoop@nodo1 ~]$ start-dfs.sh
+
 [hadoop@nodo1 ~]$ start-yarn.sh
 
 para que funcione correctamente.
