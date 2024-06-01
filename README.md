@@ -68,6 +68,8 @@ Lo que nos muestra es las noticias que hemos extraido del scraping y para poder 
 
 
 <p>
+    Antes tenemos que descargar el archivo hadoop-bigData que esta en esta cuenta solo a que ir a repositorios 
+    y buscar con ese nombre.
 Para poder usar Hadoop vamos a tener que instalar:
 </p>
 - Virtual box.
