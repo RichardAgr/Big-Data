@@ -1,0 +1,23 @@
+http://localhost:50071/ 	   para ver los archivos
+http://localhost:8089/		   para ver el progreso de mapreduce
+
+[hadoop@nodo1 ~]$ start-dfs.sh
+[hadoop@nodo1 ~]$ start-yarn.sh
+[hadoop@nodo1 ~]$ ./automatizacion.sh 
+
+
+[hadoop@nodo1 ~]$ rm -rf /home/hadoop/resultado/*
+[hadoop@nodo1 ~]$ hdfs dfs -put noticias.txt /noticias
+[hadoop@nodo1 ~]$ cd /opt/hadoop/hadoop-2.7.7
+[hadoop@nodo1 hadoop-2.7.7]$ cd share/
+[hadoop@nodo1 share]$ cd hadoop/
+[hadoop@nodo1 hadoop]$ cd mapreduce/
+[hadoop@nodo1 mapreduce]$ hadoop jar hadoop-mapreduce-examples-2.7.7.jar wordcount /noticias /resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -get /resultado/part-r-00000 /home/hadoop/resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -rm -r /resultado
+[hadoop@nodo1 mapreduce]$ hdfs dfs -rm /resultado/noticias.txt
+
+
+hdfs dfs -rm -r /resultado
+hdfs dfs -rm /noticias/noticias.txt
+

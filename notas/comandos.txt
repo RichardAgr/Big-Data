@@ -1,0 +1,17 @@
+npm install next react react-dom
+
+./automatizacion.sh
+esto va en filezilla:   sftp://localhost
+
+CREATE DATABASE BigData;
+USE BigData;
+CREATE TABLE noticias (
+    id VARCHAR(500) PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    content TEXT NOT NULL,
+    link VARCHAR(500) NOT NULL,
+    page VARCHAR(50) NOT NULL,
+    linkImage VARCHAR(500) NOT NULL,
+    contentFilter TEXT NOT NULL
+);
